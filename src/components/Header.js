@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-constructor */
+/* eslint-disable no-useless-constructor, react/prop-types */
 import React, { Component } from 'react';
 
 class Header extends Component {
@@ -7,7 +7,17 @@ class Header extends Component {
   }
 
   render() {
-    return <div>Hello, world!</div>;
+    const { fName, lName, email, phone } = this.props;
+    return (
+      <div>
+        <div>
+          {fName} {lName}
+        </div>
+        <div>
+          {email} {phone}
+        </div>
+      </div>
+    );
   }
 }
 
