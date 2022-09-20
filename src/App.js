@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
+import Input from './Input';
 import Header from './components/Header';
 
 class App extends Component {
@@ -7,10 +8,10 @@ class App extends Component {
     super();
 
     this.state = {
-      fName: '',
-      lName: '',
+      firstName: '',
+      lastName: '',
       email: '',
-      phone: '',
+      phoneNumber: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,53 +30,42 @@ class App extends Component {
   }
 
   render() {
-    const { fName, lName, email, phone } = this.state;
+    const { firstName, lastName, email, phoneNumber } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="fNameInput">
-            First Name
-            <input
-              onChange={this.handleChange}
-              value={fName}
-              type="text"
-              name="fName"
-              id="fNameInput"
-            />
-          </label>
-          <label htmlFor="lNameInput">
-            Last Name
-            <input
-              onChange={this.handleChange}
-              value={lName}
-              type="text"
-              name="lName"
-              id="lNameInput"
-            />
-          </label>
-          <label htmlFor="emailInput">
-            Email
-            <input
-              onChange={this.handleChange}
-              value={email}
-              type="text"
-              name="email"
-              id="emailInput"
-            />
-          </label>
-          <label htmlFor="phoneInput">
-            Phone Number
-            <input
-              onChange={this.handleChange}
-              value={phone}
-              type="text"
-              name="phone"
-              id="phoneInput"
-            />
-          </label>
+          <Input
+            labelText="First Name"
+            name="firstName"
+            value={firstName}
+            onChange={this.handleChange}
+          />
+          <Input
+            labelText="Last Name"
+            name="lastName"
+            value={lastName}
+            onChange={this.handleChange}
+          />
+          <Input
+            labelText="Email"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <Input
+            labelText="Phone Number"
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={this.handleChange}
+          />
           <button type="submit">Submit</button>
         </form>
-        <Header fName={fName} lName={lName} email={email} phone={phone} />
+        <Header
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          phoneNumber={phoneNumber}
+        />
       </div>
     );
   }

@@ -7,14 +7,14 @@ class Header extends Component {
   }
 
   render() {
-    const { fName, lName, email, phone } = this.props;
+    const { firstName, lastName, email, phoneNumber } = this.props;
     return (
       <div>
         <div>
-          {fName} {lName}
+          {firstName} {lastName}
         </div>
         <div>
-          {email} {phone}
+          {email} {phoneNumber}
         </div>
       </div>
     );
